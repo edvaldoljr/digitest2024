@@ -36,4 +36,10 @@ public class Hello {
         }
     }
 
+    public static void main(String[] args) {
+        Hello hello = new Hello();
+        hello.setTimes(MAXIMUM_AMOUNT_OF_TIMES);
+        hello.sayHello(System.out);
+    }
+
 }
