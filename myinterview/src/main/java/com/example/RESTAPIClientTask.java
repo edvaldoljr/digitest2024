@@ -1,10 +1,5 @@
 package com.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 /**
  * This task expects you to create an implementation of a Rest API client.
  * Your code should call the API endpoint related below.
@@ -17,19 +12,8 @@ import javax.persistence.*;
  * AWS S3 bucket name => interview-digiage
  * The credentials you can find in Coodesh platform or ask via e-mail for recrutamento@digiage.com.br
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "client_tasks")
+
 public class RESTAPIClientTask {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    @Column(name = "nome", nullable = false)
-    private String name;
-    private String email;
-    private String phone;
     // API endpoint => https://3ospphrepc.execute-api.us-west-2.amazonaws.com/prod/RDSLambda 
 }
