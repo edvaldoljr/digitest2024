@@ -20,16 +20,16 @@ public class RESTAPIClientServerTask {
     }
 
     public void fetchAndPrintGenderCounts() {
-        ResponseEntity<Employee[]> responseEntity = restTemplate.getForEntity(apiUrl, Employee[].class);
+        ResponseEntity<RESTAPIClientTask[]> responseEntity = restTemplate.getForEntity(apiUrl, RESTAPIClientTask[].class);
 
         if (responseEntity.getStatusCode().is2xxSuccessful()) {
-            Employee[] employees = responseEntity.getBody();
+            RESTAPIClientTask[] employees = responseEntity.getBody();
 
             if (employees != null) {
                 int maleCount = 0;
                 int femaleCount = 0;
 
-                for (Employee employee : employees) {
+                for (RESTAPIClientTask employee : employees) {
                     if ("M".equalsIgnoreCase(employee.getGender())) {
                         maleCount++;
                     } else if ("F".equalsIgnoreCase(employee.getGender())) {
@@ -37,9 +37,10 @@ public class RESTAPIClientServerTask {
                     }
                 }
 
-                System.out.println("Número de registros por gênero:");
-                System.out.println("Masculino: " + maleCount);
-                System.out.println("Feminino: " + femaleCount);
+                System.out.println("*==== NÚMERO DE REGISTRO POR GENEROS: ====*");
+                System.out.println("         Masculino:     "  + maleCount     );
+                System.out.println("         Feminino:      "  + femaleCount    );
+                System.out.println("*=========================================*");
             } else {
                 System.out.println("Resposta vazia da API.");
             }
@@ -48,16 +49,5 @@ public class RESTAPIClientServerTask {
         }
     }
 
-    // Classe de modelo para representar a estrutura dos dados da API
-    private static class Employee {
-        private Integer emp_no;
-        private String first_name;
-        private String last_name;
-        private String gender;
-
-        // Getters e Setters para os campos necessários
-        public String getGender() {
-            return gender;
-        }
-    }
 }
+

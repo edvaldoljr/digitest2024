@@ -18,7 +18,5 @@ public class Application {
         // Chama o método para buscar e imprimir os registros por gênero
         client.fetchAndPrintGenderCounts();
 
-        // Fecha o contexto da aplicação Spring
-        context.close();
     }
 }

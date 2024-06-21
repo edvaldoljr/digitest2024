@@ -1,6 +1,5 @@
 package com.example;
 
-import jakarta.persistence.*;
 
 /**
  * This task expects you to create an implementation of a Rest API client.
@@ -15,47 +14,15 @@ import jakarta.persistence.*;
  * The credentials you can find in Coodesh platform or ask via e-mail for recrutamento@digiage.com.br
  */
 
-
-@Entity
-@Table(name = "cliente")
 public class RESTAPIClientTask {
     // API endpoint => https://3ospphrepc.execute-api.us-west-2.amazonaws.com/prod/RDSLambda
+    private Integer emp_no;
+    private String first_name;
+    private String last_name;
+    private String gender;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long empNo;  // Identificador único do empregado
-    @Column(name = "nome", nullable = false)
-    private String firstName;  // Nome do empregado
-    private String lastName;  // Sobrenome do empregado
-    private String gender;  // Gênero do empregado
-
-    // Getters e setters
-    public Long getEmpNo() {
-        return empNo;
-    }
-    public void setEmpNo(Long empNo) {
-        this.empNo = empNo;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
+    // Getters e Setters para os campos necessários
     public String getGender() {
         return gender;
-    }
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 }
